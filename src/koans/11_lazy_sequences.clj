@@ -24,16 +24,16 @@
      (repeat 10 :a))
 
   "Iteration can be used for repetition"
-  ;; NOTE: I've added two possible solutions here -
-  ;;       my assumption is likely that the second
-  ;;       is the intended, if only because this koan
-  ;;       seems to be about exploring iterate (whose
-  ;;       signature is [fn x]). In particular, I think
-  ;;       the koan may want a new Clojurian to develop
-  ;;       an intuition around the argument to iterate's
-  ;;       fn parameter
+  ;; NOTE: A valid and possible solution is provided below,
+  ;;       but I think here the intended goal is to use the
+  ;;       identity function instead - likely to familiarize
+  ;;       a new Clojurian to the notion that the parameter
+  ;;       to be recieved by the function provided to
+  ;;       iterate ([fn x]) may take (and often does)
+  ;;       the second parameter, x.
+
   ;; (= (repeat 100 "hello")
-     ;; (take 100 (iterate (fn [_] "hello") "hello")))
+  ;;    (take 100 (iterate (fn [_] "hello") "hello")))
 
   (= (repeat 100 "hello")
      (take 100 (iterate (fn [x] x) "hello"))))
